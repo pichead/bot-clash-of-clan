@@ -310,15 +310,16 @@ def moveToLoc(loc) :
     time.sleep(1)
     pyautogui.moveTo(loc[0], loc[1], duration=0.25)
 
-def DragDown(start: Optional[Tuple[int, int]] = None, distance: int = 500, duration: float = 0.4):
+def DragDown(start: Optional[Tuple[int, int]] = None, distance: int = 700, duration: float = 2):
     """Click left and drag the mouse downward.
     - start: (x, y) to begin drag; if None, use current cursor
     - distance: pixels to drag down (positive = down)
     - duration: seconds for the drag movement
     """
     try:
-        if start is not None:
-            pyautogui.moveTo(start[0], start[1], duration=0.2)
+        
+        pyautogui.moveTo(50, 50, duration=1)
+        time.sleep(0.5)
         pyautogui.mouseDown(button='left')
         pyautogui.moveRel(max(1, distance), max(1, distance), duration=duration)
         pyautogui.mouseUp(button='left')
@@ -355,26 +356,26 @@ def run():
 
     # deploy Dragon
     getTroopDragon()
-    time.sleep(0.5)
+    time.sleep(0.2)
     moveToLoc(loc1)
     deployTroop(20)
 
     # deploy Machine Balloon
     getMachineBalloon()
-    time.sleep(0.5)
+    time.sleep(0.2)
     moveToLoc(loc1)
     deployTroop(3)
 
 
     # deploy Hero Warden
     getHeroWarden()
-    time.sleep(0.5)
+    time.sleep(0.2)
     moveToLoc(loc1)
     deployTroop(3)
 
     # deploy Hero Royal
     getHeroRoyal()
-    time.sleep(0.5)
+    time.sleep(0.2)
     moveToLoc(loc1)
     deployTroop(3)
     time.sleep(1)
@@ -383,7 +384,7 @@ def run():
 
     # deploy Spell Bat
     getSpellBat()
-    time.sleep(1)
+    time.sleep(0.2)
     moveToLoc(loc1)
     time.sleep(0.5)
     deployTroop(15)
@@ -391,7 +392,7 @@ def run():
 
     # deploy Hero Minion
     getHeroMinion()
-    time.sleep(0.5)
+    time.sleep(0.2)
     moveToLoc(loc1)
     deployTroop(3)
     time.sleep(1)
@@ -399,7 +400,7 @@ def run():
 
     # deploy Hero Queen
     getHeroQueen()
-    time.sleep(0.5)
+    time.sleep(0.2)
     moveToLoc(loc1)
     deployTroop(3)
     time.sleep(1)
